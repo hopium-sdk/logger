@@ -1,18 +1,19 @@
 {
   "name": "@hopium-sdk/logger",
   "type": "module",
-  "main": "src/index.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.ts",
-      "require": "./dist/index.ts"
-    }
-  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "prepare": "npm run build"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tsup": "^8.5.0"
   },
   "peerDependencies": {
     "typescript": "^5"
