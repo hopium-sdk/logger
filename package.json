@@ -1,9 +1,19 @@
 {
   "name": "@hopium-sdk/logger",
-  "module": "src/index.ts",
   "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
+  },
+  "files": [
+    "src"
+  ],
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tsup": "^8.5.0"
   },
   "peerDependencies": {
     "typescript": "^5"
