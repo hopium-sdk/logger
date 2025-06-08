@@ -1,0 +1,14 @@
+{
+  "name": "@hopium-sdk/logger",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
