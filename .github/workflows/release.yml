@@ -34,7 +34,7 @@ jobs:
     - name: Read package.json
       id: pkg
       run: |
-        name=$(jq -r .name package/package.json)
+        name=$(jq -r .name package.json)
         echo "name=$name" >> $GITHUB_OUTPUT
         echo "Package name: $name"
 
@@ -102,12 +102,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Copy README.md to package
-      run: |
-        cp README.md package/README.md
-
     - name: Build and Publish
-      working-directory: package
       run: |
         npm install
         npm run build
